@@ -12,6 +12,7 @@ node_modules/
 # Clarinet devnet / generated settings (keep Devnet.toml, Testnet.toml, Mainnet.toml tracked)
 contracts/.cache/
 contracts/.devnet/
+contracts/deployments/
 contracts/settings/Simnet.toml
 contracts/settings/Epoch*.toml
 

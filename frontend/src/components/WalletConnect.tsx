@@ -88,7 +88,7 @@ export function WalletConnect() {
   };
 
   // 1. Prevents SSR Flash: Render nothing or a skeleton until client-side mount
-  if (!isMounted) return <div style={{ width: '140px', height: '38px' }} />;
+  if (!isMounted) return <div style={{ width: '140px', height: '40px' }} />;
 
   // 2. Disconnected UI
   if (!address) {
@@ -96,7 +96,7 @@ export function WalletConnect() {
       <button
         onClick={handleConnect}
         disabled={connecting}
-        className='bg-[#434242] w-[135px] h-[40px] rounded-[40px] border-[1px] border-[#1F1E1F] text-[12px] text-[#F4F3EF] font-mono leading-[100%]'
+        className="inline-flex h-10 min-w-[135px] items-center justify-center rounded-xl bg-[#c2410c] px-4 text-sm font-medium text-white transition-colors hover:bg-[#9a3412] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c2410c] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fafaf9] disabled:opacity-70"
       >
         {connecting ? 'Connecting...' : 'Connect Wallet'}
       </button>
@@ -106,13 +106,13 @@ export function WalletConnect() {
   // 3. Connected UI
   const short = `${address.slice(0, 6)}…${address.slice(-4)}`;
   return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-      <div className='bg-[#434242] w-[135px] h-[40px] rounded-[40px] border-[1px] border-[#1F1E1F] text-[12px] text-[#F4F3EF] font-mono leading-[100%] flex items-center justify-center'>
+    <div className="flex items-center gap-1 sm:gap-2">
+      <div className="inline-flex h-10 items-center rounded-xl border border-[#e7e5e4] bg-[#fafaf9] px-2.5 font-mono text-[13px] text-[#1c1917]">
         {short}
       </div>
-      <button 
+      <button
         onClick={handleDisconnect}
-        style={{ padding: '6px 12px', color: '#9ca3af', cursor: 'pointer', background: 'transparent', border: 'none' }}
+        className="inline-flex h-10 items-center rounded-lg px-2 text-[13px] text-[#57534e] transition-colors hover:text-[#1c1917] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c2410c]"
       >
         Disconnect
       </button>

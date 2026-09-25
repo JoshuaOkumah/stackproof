@@ -2,7 +2,7 @@
 # https://github.com/scaffold-stack/scaffold-stack
 
 [project]
-name = "stackproof-scaffold"
+name = "stackproof"
 
 # [defaults]
 # network = "devnet"

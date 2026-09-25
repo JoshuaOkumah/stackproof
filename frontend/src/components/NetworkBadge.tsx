@@ -1,13 +1,11 @@
-import React from 'react'
 import { scaffoldConfig } from '../scaffold.config';
 
 function NetworkBadge() {
-    const network = scaffoldConfig.network;
-    return (
-      <span className={`text-xs px-2 py-0.5 font-mono text-[#8F8D8E]`}>
-        {network}
-      </span>
-    );
-  }
+  return (
+    <span className="hidden items-center rounded-full border border-[#e7e5e4] bg-[#fafaf9] px-2.5 py-1 font-mono text-[10px] uppercase tracking-wider text-[#57534e] sm:inline-flex">
+      {scaffoldConfig.network}
+    </span>
+  );
+}
 
-export default NetworkBadge
+export default NetworkBadge;

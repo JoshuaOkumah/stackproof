@@ -4,11 +4,39 @@
 @tailwind utilities;
 
 :root {
-  --background: #131416 !important;
-  --foreground: #f9fafb;
+  --background: #fafaf9;
+  --foreground: #1c1917;
+  --surface: #ffffff;
+  --border: #e7e5e4;
+  --muted: #57534e;
+  --subtle: #78716c;
+  --accent: #c2410c;
+  --accent-strong: #9a3412;
+  --danger: #b42318;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+  font-family: 'Instrument Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer components {
+  .sp-card {
+    @apply rounded-2xl border border-[#e7e5e4] bg-white shadow-[0_1px_2px_rgba(28,25,23,0.04)];
+  }
+
+  .sp-btn-primary {
+    @apply inline-flex h-10 items-center justify-center rounded-xl bg-[#c2410c] px-4 text-sm font-medium text-white transition-colors hover:bg-[#9a3412] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c2410c] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fafaf9] disabled:cursor-not-allowed disabled:bg-[#e7e5e4] disabled:text-[#a8a29e];
+  }
+
+  .sp-input {
+    @apply block w-full rounded-xl border border-[#e7e5e4] bg-white px-4 py-3 text-[15px] leading-relaxed text-[#1c1917] placeholder:text-[#a8a29e] focus:border-[#c2410c] focus:outline-none focus:ring-2 focus:ring-[#c2410c]/20;
+  }
+
+  .sp-link {
+    @apply text-[#c2410c] underline-offset-4 transition-colors hover:text-[#9a3412] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c2410c] focus-visible:ring-offset-2 rounded-sm;
+  }
 }

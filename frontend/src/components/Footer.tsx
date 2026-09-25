@@ -1,12 +1,13 @@
-import React from 'react'
+import React from 'react';
 
 function Footer() {
-    return (
-    <div className='w-full mb-[50px]'>         
-        <p className='text-[12px] font-mono font-500 text-[#908E8E] flex items-center justify-center text-center'>Footer(c)</p>
-    </div>
+  return (
+    <footer className="mx-auto w-full max-w-3xl px-4 pb-10 pt-4 sm:px-6">
+      <p className="border-t border-[#e7e5e4] pt-6 text-center text-xs text-[#78716c]">
+        StackProof — a Scaffold Stacks dApp on Stacks testnet.
+      </p>
+    </footer>
+  );
+}
 
-    );
-  }
-
-export default Footer
+export default Footer;

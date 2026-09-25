@@ -5,14 +5,15 @@ import Header from '../components/Header';
 import Footer from '@/components/Footer';
 
 export const metadata = {
-  title: 'scaffold-stacks',
-  description: 'Built with scaffold-stacks',
+  title: 'StackProof — Prove it. Put it on-chain.',
+  description:
+    'Publish short proofs of what you built on the Stacks blockchain. A Scaffold Stacks dApp.',
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className="bg-[#131416]">
-      <body className="bg-[#131416] text-white">
+    <html lang="en">
+      <body>
         <WalletProvider>
           <Header />
           {children}
