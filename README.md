@@ -54,7 +54,7 @@ npm run typecheck --prefix frontend
 npm run build --prefix frontend
 ```
 
-## Contract API (`SP...testnet` placeholder until deployed)
+## Contract API (`ST7B1XF8HXX8RDZMEVTD40A0YDYM2BY8490RDDM5.stackproof` on testnet)
 
 ```clarity
 (submit-proof (content (string-utf8 280)))  ;; -> (response uint uint)
@@ -96,20 +96,22 @@ Each successful submission stores `tx-sender` and `stacks-block-height` as the t
 
 Deployments require a funded testnet deployer and are performed explicitly (never automatically):
 
-1. Add your testnet deployer mnemonic to `contracts/settings/Testnet.toml` (keep it out of git).
+1. Add your testnet deployer mnemonic to `contracts/settings/Testnet.toml` — and never commit the filled file (only the placeholder is tracked).
 2. Fund the deployer at the [Hiro testnet faucet](https://explorer.hiro.so/sandbox/faucet?chain=testnet).
 3. `stacksdapp deploy --network testnet --yes`
 4. `stacksdapp generate` — refreshes `frontend/src/generated/deployments.json` with the real contract id.
 5. Rebuild/redeploy the frontend (`NEXT_PUBLIC_NETWORK=testnet`).
 
-**Contract address:** _pending — filled in after testnet deployment._
+**Contract address:** `ST7B1XF8HXX8RDZMEVTD40A0YDYM2BY8490RDDM5.stackproof` — deploy tx confirmed at block 542828 ([explorer](https://explorer.hiro.so/txid/3b5319cabb54b6a20fc30e88ef92e7df3cf834188455496264adad52058f7a29?chain=testnet)).
 
 ## Frontend deployment (Vercel)
 
-- Root directory: `frontend`
-- Environment: `NEXT_PUBLIC_NETWORK=testnet` (see `frontend/.env.local.example`)
+- **Live:** https://stackproof-two.vercel.app (project `stackproof`, scope `jamie25`)
+- Deployed with the Vercel CLI from `frontend/` (`vercel deploy --prod`); inspect: https://vercel.com/jamie25/stackproof
+- Environment: `NEXT_PUBLIC_NETWORK=testnet` set for Production/Preview/Development (see `frontend/.env.local.example`)
 - Optional: `NEXT_PUBLIC_STACKS_NODE_URL`, `NEXT_PUBLIC_HIRO_API_KEY`
 - No secrets belong in the frontend — signing happens in the user's wallet.
+- The proof board reads live state from `ST7B1XF8HXX8RDZMEVTD40A0YDYM2BY8490RDDM5.stackproof`; if the deployment record is missing for the target network, it honestly reports "not deployed" instead of guessing.
 
 ## Security notes
 

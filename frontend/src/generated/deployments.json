@@ -1,1 +1,11 @@
-{ "network": "", "deployed_at": "", "contracts": {} }
+{
+  "network": "testnet",
+  "deployed_at": "2026-09-26T05:05:45.000000000+00:00",
+  "contracts": {
+    "stackproof": {
+      "contract_id": "ST7B1XF8HXX8RDZMEVTD40A0YDYM2BY8490RDDM5.stackproof",
+      "tx_id": "0x3b5319cabb54b6a20fc30e88ef92e7df3cf834188455496264adad52058f7a29",
+      "block_height": 542828
+    }
+  }
+}
